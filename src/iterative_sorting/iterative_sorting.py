@@ -17,9 +17,28 @@ def selection_sort(arr):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
-    # Your code here
-
-
+    '''For each element in the list, bubble elements towards the right by swapping them
+       with their neighbor'''
+    #Keep looping from beginning of list to end until all elements are sorted (swapped flag)
+    #Start flag as true
+    swapped = True
+    while swapped:
+        #set swapped to false (it will be corrected to true in the for loop
+        #unless the array is sorted)
+        #Loop through the elements of the list
+        for i in range(len(arr-1)):
+            #If an element is greater than the next element, swap them
+            if arr[i] > arr[i+1]:
+                #swap
+                #save temporary copy of left element
+                temp = arr[i]
+                #replace left element with right element
+                arr[i] = arr[i+1]
+                #replace right element with temporary copy of left element
+                arr[i+1] = temp
+                #set swapped flag to true so outer loop can look for other
+                #elements that need to be swapped
+                swapped = True
     return arr
 
 '''
